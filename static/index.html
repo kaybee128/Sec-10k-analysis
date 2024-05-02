@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Analysis</title>
+</head>
+<body>
+    <h1>Company Analysis</h1>
+    <form id="companyForm">
+        <label for="companyName">Enter Company Name:</label>
+        <input type="text" id="companyName" name="companyName" required>
+        <br><br>
+        <label for="tickerSymbol">Enter Ticker Symbol:</label>
+        <input type="text" id="tickerSymbol" name="tickerSymbol" required>
+        <br><br>
+        <button type="button" id="button1">Business</button>
+        <button type="button" id="button2">Risk</button>
+        <button type="button" id="button3">Management discussion and analysis</button>
+      
+    </form>
+
+    <script>
+        document.getElementById("button1").addEventListener("click", function() {
+            // Get the ticker symbol input value
+            var tickerSymbol = document.getElementById("tickerSymbol").value;
+
+            // Send a GET request to the backend with the ticker symbol
+            fetch(`/process_button1?tickerSymbol=${tickerSymbol}`)
+                .then(response => response.text())
+                .then(data => {
+                    // Display the response from the backend
+                    alert(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+
+
+        document.getElementById("button2").addEventListener("click", function() {
+            // Get the ticker symbol input value
+            var tickerSymbol = document.getElementById("tickerSymbol").value;
+
+            // Send a GET request to the backend with the ticker symbol
+            fetch(`/process_button2?tickerSymbol=${tickerSymbol}`)
+                .then(response => response.text())
+                .then(data => {
+                    // Display the response from the backend
+                    alert(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+        document.getElementById("button3").addEventListener("click", function() {
+            // Get the ticker symbol input value
+            var tickerSymbol = document.getElementById("tickerSymbol").value;
+
+            // Send a GET request to the backend with the ticker symbol
+            fetch(`/process_button3?tickerSymbol=${tickerSymbol}`)
+                .then(response => response.text())
+                .then(data => {
+                    // Display the response from the backend
+                    alert(data);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+    </script>
+</body>
+</html>
