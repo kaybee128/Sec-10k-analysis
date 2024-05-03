@@ -1,11 +1,13 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 from sec10_process import find_insights
+from financial_statement import show_plot
+import os
 app = Flask(__name__)
-
+img = os.path.join('static', 'Image')
 @app.route('/')
 def index():
     # Render the HTML template
-    return app.send_static_file('index.html')
+    return render_template('index.html')
 
 @app.route('/process_button1', methods=['GET'])
 def process_button1():
@@ -43,7 +45,15 @@ def process_button3():
     # Return a response to the frontend
     return f"{ans}"
 
+@app.route('/getFinancialGraph', methods=['GET'])
+def getFinancialGraph():
+    # Get the ticker symbol from the query parameters
+    ticker_symbol = request.args.get('tickerSymbol')
 
+    show_plot(ticker_symbol)
+    file = os.path.join(img, f'{ticker_symbol}.jpeg')
+    # filepath=f"url_for('static', filename='/Image/{ticker_symbol}.jpeg')"
+    return render_template('display_image.html',filepath=file)
 
 
 if __name__ == '__main__':
