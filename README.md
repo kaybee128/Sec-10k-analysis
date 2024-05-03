@@ -16,7 +16,9 @@ This repository contains code for analyzing SEC 10K filings of any company using
    git clone https://github.com/kaybee128/Sec-10k-analysis.git
    ```
 2. Install the required Python packages:
-
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ## Usage
 1. Ensure you have obtained an API key from OpenAI and SEC API.
