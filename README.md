@@ -13,7 +13,7 @@ This repository contains code for analyzing SEC 10K filings of any company using
 ## Installation
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/kaybee128/Sec-10k-analysis.git
    ```
 2. Install the required Python packages:
 
