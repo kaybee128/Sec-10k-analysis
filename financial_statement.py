@@ -6,12 +6,12 @@ from sec_downloader import Downloader
 from sec_downloader.types import RequestedFilings
 
 
-def show_plot(ticker):
-    # print("in function")
     #find the url of the 10k filing using sec-downloader 
     #extract income statements from it using SEC API
     #Plot the income statements
     
+def show_plot(ticker):
+   
     dl=Downloader("mycompanyname", "xyz@email.com")
     metadatas= dl.get_filing_metadatas(RequestedFilings(ticker,"10-K",limit=1))
     for filings in metadatas:

@@ -1,11 +1,10 @@
-
-# Adapted from https://github.com/rsljr/edgarParser/blob/master/parse_10K.py
-
 import re
 import unicodedata
 from bs4 import BeautifulSoup as bs
 import requests
 
+
+# parse 10K filings to retrieve individual sections
 def parse_10k_filing(content, section):
 
     if section not in [0, 1, 2, 3]:
@@ -81,15 +80,14 @@ def parse_10k_filing(content, section):
     return(data)
 
 
-# %%
+
 def retrieve_section(html,section):
     res = parse_10k_filing(html, section)[0]
     paragraphs = list(map(lambda s: s.strip(), filter(lambda s: len(s) > 10, res.split('  '))))
     return paragraphs
-# %%
+
 # take ticket input download 10k file parse in this doc, call openai api to create summary
 
-# %%
 def analyse_text(text, section, company_name):
     ans= openai.chat.completions.create(
      model="gpt-3.5-turbo",
@@ -120,16 +118,14 @@ def find_txt_files(folder_path):
                 txt_files.append(os.path.join(root, file))
     return txt_files
 
+
+# iterates over the txt files to find the correct 10k file for the company
 def return_path(ticker):
     folder_path = 'Downloads/'
     txt_files = find_txt_files(folder_path)
     for txt_file in txt_files:
         if(ticker in txt_file):
             return txt_file
-
-return_path("AAPL")
-
-
 
 from sec_edgar_downloader import Downloader
 def download_sec10(ticker):
@@ -139,32 +135,26 @@ def download_sec10(ticker):
     html = x.read()
     return html
 
-# ans= download_sec10("PEP")
-# print(ans[1:500])
-
-
-# %%
 def get_section_name(number):
     section_names = {1: "business", 2: "risk", 3: "MDA"}
     return section_names.get(number, "Unknown")
 
-# %%
-# Main loop
 
 import openai
 from openai import OpenAI
 OPENAI_API_KEY="sk-proj-sl342vRYsalfWewKxVl0T3BlbkFJ6d4nqO63zAv5WTWyDqSs"
 openai.api_key=OPENAI_API_KEY
 
-def find_insights(ticker, number):
 
-    
+# MAIN LOOP IT FIRSTS DOWNLOADS THE SEC 10K FILING, 
+# RETRIEVE SECTIONS WHICH IS NEEDED
+# ANALYSES THE TEXT AND RETURNS INSIGHTS
+
+
+def find_insights(ticker, number):
     text_file=download_sec10(ticker)
     section=retrieve_section(text_file,number)
     text= analyse_text(section,get_section_name(number),ticker)
-    
-
-
     return text
 
 # find_insights("MSFT",2)
