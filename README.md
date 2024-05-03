@@ -27,7 +27,8 @@ This repository contains code for analyzing SEC 10K filings of any company using
    ```bash
    python app.py
    ```
-   
+## Demo
+https://drive.google.com/file/d/1pD-nq-53WAcgLco8AMfcSF5Tzmch-3FI/view?usp=sharing   
 
 ## Contributing
 Contributions are welcome! If you have any suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request.
