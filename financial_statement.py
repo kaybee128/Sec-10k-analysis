@@ -16,7 +16,7 @@ def show_plot(ticker):
     metadatas= dl.get_filing_metadatas(RequestedFilings(ticker,"10-K",limit=1))
     for filings in metadatas:
         url=filings.primary_doc_url
-    API_KEY="3ee5738d347017fcd92864dd4aa3cc1264fd42d0ba976a0c2d7a28f953e313b1"
+    API_KEY="********************"
     # print(url)
     xbrlApi = XbrlApi(API_KEY)
     xbrl_json = xbrlApi.xbrl_to_json(htm_url=url)
