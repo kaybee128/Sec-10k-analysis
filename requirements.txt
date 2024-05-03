@@ -1,0 +1,8 @@
+sec-edgar-downloader
+bs4
+openai
+sec_api
+sec_edgar_downloader
+numpy
+pandas
+matplotlib
