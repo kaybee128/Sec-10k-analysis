@@ -142,7 +142,7 @@ def get_section_name(number):
 
 import openai
 from openai import OpenAI
-OPENAI_API_KEY="sk-proj-sl342vRYsalfWewKxVl0T3BlbkFJ6d4nqO63zAv5WTWyDqSs"
+OPENAI_API_KEY="sk-proj-**********"
 openai.api_key=OPENAI_API_KEY
 
 
