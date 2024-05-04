@@ -4,6 +4,7 @@
 This repository contains code for analyzing SEC 10K filings of any company using a Language Model (LM) provided by OpenAI. The main focus of this project is to extract insights from the Business, Risk, and Management's Discussion and Analysis (MDA) sections of the filings. Additionally, the code generates graphs illustrating important financial statements of the company.
 
 ## Features
+- Downloads sec 10 K data of any company from the Input Box.
 - Analyze SEC 10K filings to extract insights on Business, Risk, and MDA sections.
 - Generate graphs depicting key financial statements of the company.
 - Utilizes OpenAI API for language analysis.
