@@ -31,5 +31,10 @@ This repository contains code for analyzing SEC 10K filings of any company using
 ## Demo
 https://drive.google.com/file/d/1pD-nq-53WAcgLco8AMfcSF5Tzmch-3FI/view?usp=sharing   
 
+## Tech Stack
+1. FrontEnd- HTML + Javascript: They iare one of the most commonly used tech stack for front end development. It is easy to comprehend and is compatible with almost all backend tools.
+2. BackEnd- Python + Flask: Chose python due to its succinctness and readability, allowing to accomplish tasks efficiently with minimal code, sometimes just a single line.  Flask is a python based backend which produces websites which are quick-loading and scalable.
+3. Other Tools and API: sec-edgar-downloader, sec_api, sec-downloader: used them to download sec 10K filings and easy segregation of sections. Matplotlib for plotting the graph, bs4 for parsing HTML pages and extracting important information from it. Openai library for using the generative AI model for analysing the text.
+
 ## Contributing
 Contributions are welcome! If you have any suggestions, improvements, or bug fixes, feel free to open an issue or submit a pull request.
