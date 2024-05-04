@@ -86,7 +86,8 @@ def retrieve_section(html,section):
     paragraphs = list(map(lambda s: s.strip(), filter(lambda s: len(s) > 10, res.split('  '))))
     return paragraphs
 
-# take ticket input download 10k file parse in this doc, call openai api to create summary
+# take ticket input download 10k file parse in this doc, call openai api to create summary ---------KRITIKA
+
 
 def analyse_text(text, section, company_name):
     ans= openai.chat.completions.create(
@@ -149,6 +150,7 @@ openai.api_key=OPENAI_API_KEY
 # MAIN LOOP IT FIRSTS DOWNLOADS THE SEC 10K FILING, 
 # RETRIEVE SECTIONS WHICH IS NEEDED
 # ANALYSES THE TEXT AND RETURNS INSIGHTS
+# CODE BY- KRITIKA
 
 
 def find_insights(ticker, number):
